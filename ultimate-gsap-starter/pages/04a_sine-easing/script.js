@@ -2,6 +2,7 @@ import gsap from 'gsap';
 
 const button = document.querySelector('.scroll-to-top');
 
+// Handle scroll event to toggle button visibility
 window.addEventListener('scroll', function(){
   if(this.window.scrollY>500){
     button.classList.add('show');
