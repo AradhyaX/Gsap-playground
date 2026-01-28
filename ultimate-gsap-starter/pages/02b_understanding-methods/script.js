@@ -9,6 +9,7 @@ const repeat = document.querySelector(".repeat");
 const kill = document.querySelector(".kill");
 const yoyo = document.querySelector(".yoyo");
 
+ // Initialize GSAP animation for the box element
  const Animation = gsap.to('.box',{
   opacity:1,
   rotation:360,
