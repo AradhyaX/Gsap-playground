@@ -18,8 +18,6 @@ window.addEventListener('scroll', function(){
       } )
 
       isFloating= true;
-    } else {
-      button.classList.remove('show')
     }
   } else {
     button.classList.remove('show')
