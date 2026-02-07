@@ -23,3 +23,11 @@ const animateToast = (selector, nextCallback) => {
     },
   });
 };
+
+const runSequence = () => {
+  animateToast(".toast.one", () => {
+    animateToast(".toast.two", runSequence);
+  });
+};
+
+runSequence();
