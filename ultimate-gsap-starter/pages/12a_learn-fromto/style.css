@@ -1,6 +1,7 @@
 .wave-loader {
   display: flex;
-  gap: 6px;
+  justify-content: center;
+  gap: 8px;
 }
 
 .bar {
