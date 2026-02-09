@@ -1,6 +1,6 @@
 import gsap from "gsap";
 
-// Initial set
+// gsap.set() allows you to set properties instantly (0 duration)
 gsap.set(".gsap-box", {
   x: 200,
   y: 50,
@@ -10,7 +10,7 @@ gsap.set(".gsap-box", {
   rotation: 45,
 });
 
-// Added reset animation
+// Animate back to original state to show the contrast
 gsap.to(".gsap-box", {
   x: 0,
   y: 0,
@@ -20,4 +20,7 @@ gsap.to(".gsap-box", {
   rotation: 0,
   duration: 2,
   delay: 1,
+  repeat: -1,
+  yoyo: true,
+  ease: "power2.inOut",
 });
