@@ -9,3 +9,15 @@ gsap.set(".gsap-box", {
   backgroundColor: "green",
   rotation: 45,
 });
+
+// Added reset animation
+gsap.to(".gsap-box", {
+  x: 0,
+  y: 0,
+  scale: 1,
+  opacity: 1,
+  backgroundColor: "transparent",
+  rotation: 0,
+  duration: 2,
+  delay: 1,
+});
