@@ -1,0 +1,8 @@
+.ball {
+  width: 100px;
+  height: 100px;
+  background-color: var(--dark-purple); /* Using common color from global styles usually, or fallback */
+  background-color: #7b2cbf;
+  border-radius: 50%;
+  margin: 50px auto;
+}
