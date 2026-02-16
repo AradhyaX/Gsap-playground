@@ -33,3 +33,7 @@ cards.forEach((card) => {
     tl.play();
   });
 });
+
+closeBtn.addEventListener("click", () => {
+  tl.reverse();
+});
