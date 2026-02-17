@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Challenge: Timeline Animation</title>
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <header class="nav">
+        <a href="/">
+          <img src=" /logo.svg" alt="logo" />
+        </a>
+        <a href="https://jsmastery.com/all-courses" target="_blank"
+          >GSAP Course</a
+        >
+      </header>
+
+      <div class="content">
+        <div class="arrow">
+          <a href="../../index.html">
+            <img src=" /arrow.svg" alt="arrow" />
+          </a>
+        </div>
+
+        <section>
+          <h1>Challenge: Rocket Launch Timeline</h1>
+
+          <p>
+            Create a rocket launch sequence using <code>gsap.timeline()</code>.
+            The challenge is to orchestrate multiple animations in perfect
+            synchronization to simulate a realistic rocket launch.
+          </p>
+
+          <p>
+            Your timeline should include: countdown animation, smoke effects,
+            rocket lift-off, flame ignition, and background elements reacting
+            to the launch.
+          </p>
+
+          <p>
+            Use timeline features like <code>position parameters</code>,
+            <code>labels</code>, and <code>relative timing</code> to create
+            smooth, overlapping animations that feel natural and exciting.
+          </p>
+
+          <p>
+            <strong>Bonus:</strong> Add interactive controls to play, pause,
+            reverse, and restart the launch sequence!
+          </p>
+        </section>
+      </div>
+
+      <div class="demo flex-center">
+        <section>
+          <div class="launch-container">
+            <div class="stars" id="stars"></div>
+            
+            <div class="countdown" id="countdown">
+              <span class="count-number">3</span>
+            </div>
+
+            <div class="rocket-wrapper">
+              <div class="smoke" id="smoke1"></div>
+              <div class="smoke" id="smoke2"></div>
+              <div class="smoke" id="smoke3"></div>
+              
+              <div class="rocket" id="rocket">
+                <div class="rocket-body">
+                  <div class="window"></div>
+                  <div class="wing wing-left"></div>
+                  <div class="wing wing-right"></div>
+                </div>
+                <div class="flame" id="flame"></div>
+              </div>
+            </div>
+
+            <div class="ground"></div>
+            <div class="platform"></div>
+          </div>
+
+          <div class="controls">
+            <button class="control-btn" id="launchBtn">🚀 Launch</button>
+            <button class="control-btn" id="pauseBtn">⏸ Pause</button>
+            <button class="control-btn" id="reverseBtn">⏮ Reverse</button>
+            <button class="control-btn" id="restartBtn">🔄 Restart</button>
+          </div>
+        </section>
+      </div>
+
+      <script type="module" src="script.js"></script>
+    </main>
+  </body>
+</html>
