@@ -1,0 +1,184 @@
+.launch-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 500px;
+  background: linear-gradient(to bottom, #0a0e27 0%, #1a1f3a 50%, #2a2f4a 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20% 30%, white, transparent),
+    radial-gradient(2px 2px at 60% 70%, white, transparent),
+    radial-gradient(1px 1px at 50% 50%, white, transparent),
+    radial-gradient(1px 1px at 80% 10%, white, transparent),
+    radial-gradient(2px 2px at 90% 60%, white, transparent),
+    radial-gradient(1px 1px at 33% 80%, white, transparent),
+    radial-gradient(1px 1px at 15% 15%, white, transparent);
+  background-size: 200% 200%;
+  opacity: 0.8;
+}
+
+.countdown {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.count-number {
+  font-size: 120px;
+  font-weight: bold;
+  color: #ff6b35;
+  text-shadow: 0 0 20px rgba(255, 107, 53, 0.8),
+               0 0 40px rgba(255, 107, 53, 0.6);
+}
+
+.rocket-wrapper {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.rocket {
+  position: relative;
+  width: 60px;
+  height: 120px;
+}
+
+.rocket-body {
+  position: relative;
+  width: 60px;
+  height: 90px;
+  background: linear-gradient(to bottom, #e8eaf6 0%, #c5cae9 100%);
+  border-radius: 30px 30px 10px 10px;
+  box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.window {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, #4fc3f7 0%, #0288d1 100%);
+  border-radius: 50%;
+  border: 3px solid #1565c0;
+}
+
+.wing {
+  position: absolute;
+  bottom: 5px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.wing-left {
+  left: -20px;
+  border-width: 30px 20px 0 0;
+  border-color: #ff6b35 transparent transparent transparent;
+}
+
+.wing-right {
+  right: -20px;
+  border-width: 30px 0 0 20px;
+  border-color: #ff6b35 transparent transparent transparent;
+}
+
+.flame {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 40px;
+  background: linear-gradient(to bottom, 
+    #ffeb3b 0%, 
+    #ff9800 50%, 
+    #ff5722 100%);
+  border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+  opacity: 0;
+  filter: blur(2px);
+}
+
+.smoke {
+  position: absolute;
+  bottom: -10px;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, rgba(200, 200, 200, 0.6) 0%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0;
+}
+
+#smoke1 {
+  left: 10px;
+}
+
+#smoke2 {
+  left: 25px;
+}
+
+#smoke3 {
+  left: 40px;
+}
+
+.ground {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(to bottom, #4a5568 0%, #2d3748 100%);
+}
+
+.platform {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 20px;
+  background: linear-gradient(to bottom, #718096 0%, #4a5568 100%);
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.controls {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.control-btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.control-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.control-btn:active {
+  transform: translateY(0);
+}
