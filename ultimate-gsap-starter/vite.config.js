@@ -76,6 +76,10 @@ export default defineConfig({
           __dirname,
           "pages/14a_learn-timeline/index.html"
         ),
+        "15a_learn-stagger": resolve(
+          __dirname,
+          "pages/15a_learn-stagger/index.html"
+        ),
       },
     },
   },
