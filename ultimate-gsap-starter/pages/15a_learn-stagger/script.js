@@ -3,17 +3,15 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Animate each box when it scrolls into view
-gsap.utils.toArray(".box").forEach((box) => {
-  gsap.from(box, {
-    opacity: 0,
-    y: 80,
-    duration: 1,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: box,
-      start: "top 80%",  // when top of box hits 80% of viewport
-      toggleActions: "play none none reverse",
-    },
-  });
+// Stagger: animate all boxes with a cascading delay
+gsap.from(".box", {
+  opacity: 0,
+  y: 60,
+  duration: 0.8,
+  ease: "power2.out",
+  stagger: 0.2,
+  scrollTrigger: {
+    trigger: ".section",
+    start: "top 80%",
+  },
 });
