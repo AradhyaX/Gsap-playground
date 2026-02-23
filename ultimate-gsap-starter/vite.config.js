@@ -80,6 +80,10 @@ export default defineConfig({
           __dirname,
           "pages/15a_learn-stagger/index.html"
         ),
+        "15b_challenge-scroll-hijack": resolve(
+          __dirname,
+          "pages/15b_challenge-scroll-hijack/index.html"
+        ),
       },
     },
   },
