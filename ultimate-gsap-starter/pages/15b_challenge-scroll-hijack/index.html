@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>15b: Scroll Hijack</title>
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <!-- Progress bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Slide counter -->
+    <div class="slide-counter">
+      <span id="currentSlide">1</span> / <span id="totalSlides">5</span>
+    </div>
+
+    <!-- Navigation dots -->
+    <nav class="dots-nav" id="dotsNav">
+      <button class="dot active" data-index="0" aria-label="Slide 1"></button>
+      <button class="dot" data-index="1" aria-label="Slide 2"></button>
+      <button class="dot" data-index="2" aria-label="Slide 3"></button>
+      <button class="dot" data-index="3" aria-label="Slide 4"></button>
+      <button class="dot" data-index="4" aria-label="Slide 5"></button>
+    </nav>
+
+    <!-- Scroll hint -->
+    <div class="scroll-hint" id="scrollHint">
+      <span>Scroll</span>
+      <div class="scroll-hint-arrow"></div>
+    </div>
+
+    <main class="slider-container" id="sliderContainer">
+
+      <!-- Slide 1 — Hero -->
+      <section class="slide" id="slide-0">
+        <div class="slide-content">
+          <span class="slide-tag">15b Challenge</span>
+          <h1 class="slide-title">Scroll<br/><em>Hijack</em></h1>
+          <p class="slide-desc">Each scroll step snaps you to the next full-screen panel, driven entirely by GSAP + ScrollTrigger.</p>
+        </div>
+        <div class="slide-visual">
+          <div class="shape shape--hero"></div>
+        </div>
+      </section>
+
+      <!-- Slide 2 -->
+      <section class="slide" id="slide-1">
+        <div class="slide-content">
+          <span class="slide-tag">Step 01</span>
+          <h2 class="slide-title">Capture<br/>the Scroll</h2>
+          <p class="slide-desc">We intercept the native wheel & touch events and translate raw delta into controlled panel transitions.</p>
+        </div>
+        <div class="slide-visual">
+          <div class="shape shape--circle"></div>
+        </div>
+      </section>
+
+      <!-- Slide 3 -->
+      <section class="slide" id="slide-2">
+        <div class="slide-content">
+          <span class="slide-tag">Step 02</span>
+          <h2 class="slide-title">GSAP<br/>Timeline</h2>
+          <p class="slide-desc">A master GSAP timeline scrubs through each panel's entrance animation, perfectly in sync.</p>
+        </div>
+        <div class="slide-visual">
+          <div class="shape shape--triangle"></div>
+        </div>
+      </section>
+
+      <!-- Slide 4 -->
+      <section class="slide" id="slide-3">
+        <div class="slide-content">
+          <span class="slide-tag">Step 03</span>
+          <h2 class="slide-title">Smooth<br/>Easing</h2>
+          <p class="slide-desc">Every transition uses power2.inOut easing so the hijack feels natural and intentional, not jarring.</p>
+        </div>
+        <div class="slide-visual">
+          <div class="shape shape--diamond"></div>
+        </div>
+      </section>
+
+      <!-- Slide 5 — End -->
+      <section class="slide" id="slide-4">
+        <div class="slide-content">
+          <span class="slide-tag">Fin</span>
+          <h2 class="slide-title">That's<br/>a Wrap 🎉</h2>
+          <p class="slide-desc">You've reached the end. Scroll back up or use the dots to revisit any panel.</p>
+        </div>
+        <div class="slide-visual">
+          <div class="shape shape--star"></div>
+        </div>
+      </section>
+
+    </main>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
