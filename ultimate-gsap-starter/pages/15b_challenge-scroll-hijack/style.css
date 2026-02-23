@@ -1,0 +1,331 @@
+/* ─── Reset & Base ─────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --accent-1: #a78bfa;
+  --accent-2: #38bdf8;
+  --accent-3: #fb7185;
+  --accent-4: #34d399;
+  --accent-5: #fbbf24;
+  --bg: #080810;
+  --surface: rgba(255, 255, 255, 0.04);
+  --border: rgba(255, 255, 255, 0.08);
+  --text-primary: #f8fafc;
+  --text-muted: #94a3b8;
+  --transition: 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;             /* hijack! */
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* ─── Progress Bar ─────────────────────────────────────────── */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  z-index: 100;
+  transition: width var(--transition);
+}
+
+/* ─── Slide Counter ────────────────────────────────────────── */
+.slide-counter {
+  position: fixed;
+  top: 1.5rem;
+  right: 2rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.12em;
+  z-index: 100;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── Dot Navigation ───────────────────────────────────────── */
+.dots-nav {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  z-index: 100;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: var(--border);
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  outline: none;
+}
+
+.dot:hover {
+  transform: scale(1.4);
+  background: var(--text-muted);
+}
+
+.dot.active {
+  background: var(--accent-1);
+  transform: scale(1.3);
+  box-shadow: 0 0 8px var(--accent-1);
+}
+
+/* ─── Scroll Hint ──────────────────────────────────────────── */
+.scroll-hint {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  z-index: 100;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.scroll-hint.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.scroll-hint-arrow {
+  width: 1px;
+  height: 32px;
+  background: linear-gradient(to bottom, var(--text-muted), transparent);
+  animation: scrollBounce 1.4s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: scaleY(1); opacity: 1; }
+  50%       { transform: scaleY(0.5); opacity: 0.4; }
+}
+
+/* ─── Slider Container ─────────────────────────────────────── */
+.slider-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ─── Individual Slide ─────────────────────────────────────── */
+.slide {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 0 8vw;
+  gap: 4rem;
+
+  /* slides start invisible & translated */
+  opacity: 0;
+  pointer-events: none;
+}
+
+.slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Slide 1 accent colors */
+#slide-0  { --slide-accent: var(--accent-1); }
+#slide-1  { --slide-accent: var(--accent-2); }
+#slide-2  { --slide-accent: var(--accent-3); }
+#slide-3  { --slide-accent: var(--accent-4); }
+#slide-4  { --slide-accent: var(--accent-5); }
+
+/* ─── Slide Content ────────────────────────────────────────── */
+.slide-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.slide-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--slide-accent);
+}
+
+.slide-title {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--text-primary);
+}
+
+.slide-title em {
+  font-style: normal;
+  color: var(--slide-accent);
+}
+
+.slide-desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 38ch;
+}
+
+/* ─── Slide Visual ─────────────────────────────────────────── */
+.slide-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* ─── Shapes ───────────────────────────────────────────────── */
+.shape {
+  position: relative;
+}
+
+/* Hero — large rotating square */
+.shape--hero {
+  width: min(36vw, 380px);
+  height: min(36vw, 380px);
+  border-radius: 24px;
+  background: conic-gradient(from 0deg, #a78bfa, #38bdf8, #fb7185, #a78bfa);
+  animation: heroSpin 8s linear infinite;
+  box-shadow: 0 0 80px rgba(167, 139, 250, 0.3);
+}
+
+@keyframes heroSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* Circle */
+.shape--circle {
+  width: min(30vw, 320px);
+  height: min(30vw, 320px);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #7dd3fc, #0284c7);
+  box-shadow: 0 0 80px rgba(56, 189, 248, 0.3);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.06); }
+}
+
+/* Triangle (CSS clip-path) */
+.shape--triangle {
+  width: 0;
+  height: 0;
+  border-left:  min(14vw, 160px) solid transparent;
+  border-right: min(14vw, 160px) solid transparent;
+  border-bottom: min(24vw, 280px) solid #fb7185;
+  filter: drop-shadow(0 0 40px rgba(251, 113, 133, 0.5));
+  animation: triangleBounce 2.4s ease-in-out infinite;
+}
+
+@keyframes triangleBounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-20px); }
+}
+
+/* Diamond */
+.shape--diamond {
+  width: min(26vw, 280px);
+  height: min(26vw, 280px);
+  background: linear-gradient(135deg, #6ee7b7, #059669);
+  transform: rotate(45deg);
+  border-radius: 12px;
+  box-shadow: 0 0 60px rgba(52, 211, 153, 0.3);
+  animation: diamondRotate 6s ease-in-out infinite;
+}
+
+@keyframes diamondRotate {
+  0%   { transform: rotate(45deg) scale(1); }
+  50%  { transform: rotate(90deg) scale(1.08); }
+  100% { transform: rotate(45deg) scale(1); }
+}
+
+/* Star (using clip-path) */
+.shape--star {
+  width: min(30vw, 320px);
+  height: min(30vw, 320px);
+  background: linear-gradient(135deg, #fde68a, #f59e0b);
+  clip-path: polygon(
+    50% 0%, 61% 35%, 98% 35%, 68% 57%,
+    79% 91%, 50% 70%, 21% 91%, 32% 57%,
+    2% 35%, 39% 35%
+  );
+  box-shadow: 0 0 60px rgba(251, 191, 36, 0.3);
+  animation: starPulse 2s ease-in-out infinite;
+}
+
+@keyframes starPulse {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50%       { transform: scale(1.1) rotate(10deg); }
+}
+
+/* ─── Decorative grid / glow ───────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 80% 50%, rgba(167, 139, 250, 0.05) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 60% at 20% 80%, rgba(56, 189, 248, 0.04) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Responsive ───────────────────────────────────────────── */
+@media (max-width: 700px) {
+  .slide {
+    grid-template-columns: 1fr;
+    padding: 4rem 2rem;
+    grid-template-rows: auto auto;
+    align-content: center;
+    gap: 2rem;
+  }
+
+  .slide-visual {
+    order: -1;
+    height: auto;
+  }
+
+  .shape--hero,
+  .shape--circle,
+  .shape--diamond,
+  .shape--star {
+    width: 50vw;
+    height: 50vw;
+  }
+
+  .dots-nav {
+    right: 1rem;
+  }
+
+  .slide-counter {
+    right: 1rem;
+  }
+}
