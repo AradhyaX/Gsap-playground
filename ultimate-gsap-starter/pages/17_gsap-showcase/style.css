@@ -1,0 +1,106 @@
+/* ── RESET ── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #0a0a1a;
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+/* ── NAV ── */
+.nav {
+  padding: 1.2rem 5%;
+  background: rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.logo span { color: #a855f7; }
+
+/* ── HERO ── */
+.hero {
+  text-align: center;
+  padding: 8rem 5% 5rem;
+}
+
+.eyebrow {
+  font-size: 0.85rem;
+  color: #06b6d4;
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+  opacity: 0; /* GSAP will reveal */
+}
+
+.title {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  margin-bottom: 1rem;
+  opacity: 0; /* GSAP will reveal */
+}
+.title span {
+  background: linear-gradient(135deg, #a855f7, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  color: #64748b;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0; /* GSAP will reveal */
+}
+
+.btn {
+  background: linear-gradient(135deg, #a855f7, #06b6d4);
+  color: #fff;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  opacity: 0; /* GSAP will reveal */
+}
+
+/* ── CARDS ── */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 4rem 5%;
+  flex-wrap: wrap;
+}
+
+/* ── FOOTER ── */
+.footer {
+  text-align: center;
+  padding: 2.5rem 5%;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  color: #64748b;
+  font-size: 0.9rem;
+  opacity: 0; /* GSAP will reveal */
+}
+
+.footer span { color: #a855f7; }
+
+.footer-sub {
+  margin-top: 0.4rem;
+  font-size: 0.78rem;
+  opacity: 0.6;
+}
+
+/* ── CARD ── */
+.card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  opacity: 0; /* GSAP will reveal */
+}
