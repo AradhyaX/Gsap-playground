@@ -4,28 +4,127 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GSAP Showcase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
 
+    <!-- SCROLL PROGRESS BAR -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- CURSOR SPOTLIGHT -->
+    <div class="cursor-spotlight" id="cursorSpotlight"></div>
+
+    <!-- PARTICLES CANVAS -->
+    <canvas class="particles-canvas" id="particlesCanvas"></canvas>
+
     <!-- NAV -->
     <nav class="nav">
       <div class="logo">GS<span>AP</span></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#stats">Stats</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero" id="hero">
       <p class="eyebrow" id="eyebrow">✦ Powered by GSAP</p>
-      <h1 class="title" id="title">Animate <span>Everything.</span></h1>
+      <h1 class="title" id="title">Animate <span id="titleSpan">Everything.</span></h1>
       <p class="subtitle" id="subtitle">Smooth animations with GreenSock.</p>
-      <button class="btn" id="btn">Explore Now</button>
+      <div class="btn-group">
+        <button class="btn" id="btn">Explore Now</button>
+        <button class="btn btn-outline" id="btnOutline">View Docs</button>
+      </div>
+    </section>
+
+    <!-- MARQUEE TICKER -->
+    <div class="marquee-wrapper">
+      <div class="marquee-track" id="marqueeTrack">
+        <span>⚡ 60fps Animations</span>
+        <span>🎯 ScrollTrigger</span>
+        <span>🌀 Timelines</span>
+        <span>🔥 Stagger Effects</span>
+        <span>💎 GSAP Showcase</span>
+        <span>🚀 Smooth UX</span>
+        <span>✨ CSS Variables</span>
+        <span>🎨 Gradient Magic</span>
+        <!-- Duplicate for seamless loop -->
+        <span>⚡ 60fps Animations</span>
+        <span>🎯 ScrollTrigger</span>
+        <span>🌀 Timelines</span>
+        <span>🔥 Stagger Effects</span>
+        <span>💎 GSAP Showcase</span>
+        <span>🚀 Smooth UX</span>
+        <span>✨ CSS Variables</span>
+        <span>🎨 Gradient Magic</span>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <section class="stats" id="stats">
+      <div class="stat-item">
+        <h2 class="stat-num" data-target="60">0</h2>
+        <p class="stat-label">FPS Guaranteed</p>
+      </div>
+      <div class="stat-item">
+        <h2 class="stat-num" data-target="11">0</h2>
+        <p class="stat-label">Million Downloads</p>
+      </div>
+      <div class="stat-item">
+        <h2 class="stat-num" data-target="100">0</h2>
+        <p class="stat-label">Browser Support %</p>
+      </div>
+      <div class="stat-item">
+        <h2 class="stat-num" data-target="3">0</h2>
+        <p class="stat-label">Core Plugins</p>
+      </div>
     </section>
 
     <!-- CARDS -->
-    <section class="cards">
-      <div class="card" id="card1">⚡ 60fps</div>
-      <div class="card" id="card2">🎯 ScrollTrigger</div>
-      <div class="card" id="card3">🌀 Timeline</div>
+    <section class="cards" id="features">
+      <div class="card" id="card1">
+        <div class="card-icon">⚡</div>
+        <h3>60fps</h3>
+        <p>Buttery-smooth animations that never drop a frame even on complex timelines.</p>
+      </div>
+      <div class="card" id="card2">
+        <div class="card-icon">🎯</div>
+        <h3>ScrollTrigger</h3>
+        <p>Pin, scrub, and trigger animations based on scroll position with zero effort.</p>
+      </div>
+      <div class="card" id="card3">
+        <div class="card-icon">🌀</div>
+        <h3>Timeline</h3>
+        <p>Orchestrate complex sequences with precise control over every animation step.</p>
+      </div>
+      <div class="card" id="card4">
+        <div class="card-icon">🔥</div>
+        <h3>Stagger</h3>
+        <p>Animate groups of elements with beautiful cascading delay effects.</p>
+      </div>
+      <div class="card" id="card5">
+        <div class="card-icon">💎</div>
+        <h3>Easing</h3>
+        <p>Choose from dozens of built-in eases or craft your own custom curves.</p>
+      </div>
+      <div class="card" id="card6">
+        <div class="card-icon">🚀</div>
+        <h3>Plugins</h3>
+        <p>Expand with ScrollTo, Draggable, MorphSVG and many more powerful plugins.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT / CTA -->
+    <section class="cta" id="contact">
+      <p class="eyebrow" style="opacity:0" id="ctaEyebrow">✦ Get Started Today</p>
+      <h2 class="cta-title" id="ctaTitle">Ready to <span>Animate?</span></h2>
+      <p class="cta-sub" id="ctaSub">Join millions of developers who trust GSAP for production animations.</p>
+      <button class="btn" id="ctaBtn" style="opacity:0">Start Building →</button>
     </section>
 
     <!-- FOOTER -->
