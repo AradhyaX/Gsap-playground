@@ -307,3 +307,37 @@ gsap.from('#footer', {
   onStart() { gsap.set('#footer', { opacity: 0 }); },
   onComplete() { gsap.set('#footer', { opacity: 1 }); },
 });
+
+// ═══════════════════════════════════════════════════════
+// ── FEATURE 13: BACK TO TOP BUTTON ──
+// ═══════════════════════════════════════════════════════
+(function initBackToTop() {
+  const btn = document.getElementById('backToTop');
+
+  // Show / hide with GSAP pop animation
+  ScrollTrigger.create({
+    start: '300px top',
+    onEnter: () => {
+      btn.classList.add('visible');
+      gsap.fromTo(btn, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: 'back.out(2)' });
+    },
+    onLeaveBack: () => {
+      gsap.to(btn, {
+        scale: 0,
+        opacity: 0,
+        duration: 0.3,
+        ease: 'power2.in',
+        onComplete: () => btn.classList.remove('visible'),
+      });
+    },
+  });
+
+  // Smooth scroll to top on click
+  btn.addEventListener('click', () => {
+    gsap.to(window, {
+      scrollTo: 0,
+      duration: 1.2,
+      ease: 'power3.inOut',
+    });
+  });
+})();
