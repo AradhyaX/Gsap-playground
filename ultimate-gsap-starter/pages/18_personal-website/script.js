@@ -136,3 +136,37 @@ gsap.fromTo("footer .footer-content",
     ease: "power3.out"
   }
 );
+
+// Scroll Animation for Contact Section
+gsap.fromTo(".contact-wrapper", 
+  { y: 50, opacity: 0, scale: 0.95 },
+  {
+    scrollTrigger: {
+      trigger: ".contact",
+      start: "top 80%",
+      toggleActions: "play none none reverse"
+    },
+    y: 0,
+    opacity: 1,
+    scale: 1,
+    duration: 1,
+    ease: "power3.out"
+  }
+);
+
+// Scroll Animation for Social Links
+gsap.fromTo(".social-links a", 
+  { y: 20, opacity: 0 },
+  {
+    scrollTrigger: {
+      trigger: "footer",
+      start: "top 95%",
+      toggleActions: "play none none reverse"
+    },
+    y: 0,
+    opacity: 1,
+    stagger: 0.1,
+    duration: 0.8,
+    ease: "back.out(1.5)"
+  }
+);
