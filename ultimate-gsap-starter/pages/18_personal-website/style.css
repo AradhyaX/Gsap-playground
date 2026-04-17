@@ -426,6 +426,26 @@ footer p {
   font-size: 1rem;
 }
 
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.social-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent-1);
+  transform: translateY(-3px);
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .project-wrapper { 
