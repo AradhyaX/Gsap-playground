@@ -370,6 +370,43 @@ html {
   transform: translateY(-2px);
 }
 
+/* Contact Section */
+.contact-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-group input, 
+.input-group textarea {
+  width: 100%;
+  padding: 1.2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+  border-color: var(--accent-1);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.center-btn {
+  align-self: center;
+  margin-top: 1rem;
+}
+
 /* Footer */
 footer {
   padding: 6rem 5% 3rem;
